@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <math.h>
 
 /*
 Hacer un Programa que permita calcular las raíces de una función cuadrática (X1 y X2).
@@ -8,26 +8,25 @@ Los valores de a, b y c deberán ser ingresados por teclado.
 
 int main()
 {
-    float a, b, c, root1, root2;
-    printf(" a: ");
-    scanf("%f", a);
-    printf(" b: ");
-    scanf("%f", b);
-    printf(" c: ");
-    scanf("%f", c);
+  int a, b, c, d;
+  double root1, root2;
 
-    discriminant = b * b - 4 * a * c;
+  printf("Introduzca a, b, c\n");
+  scanf("%d%d%d", &a, &b, &c);
 
-    // condition for real and different roots
-    if (discriminant > 0) {
-        root1 = (-b + sqrt(discriminant)) / (2 * a);
-        root2 = (-b - sqrt(discriminant)) / (2 * a);
-        printf("root1 = %.2lf and root2 = %.2lf", root1, root2);
-    }
+  d = b*b - 4*a*c;
 
+  if (d < 0) {
+    printf("First root = %.2lf + i%.2lf\n", -b/(double)(2*a), sqrt(-d)/(2*a));
+    printf("Second root = %.2lf - i%.2lf\n", -b/(double)(2*a), sqrt(-d)/(2*a));
+  }
+  else {
+    root1 = (-b + sqrt(d))/(2*a);
+    root2 = (-b - sqrt(d))/(2*a);
 
+    printf("Raiz 1 %.2lf\n", root1);
+    printf("Raiz 2 %.2lf\n", root2);
+  }
 
-    root1 
-    printf("Ud. Ingreso: %c-%c-%c \n", inciales[0], inciales[1], inciales[2]);
-    return 0;
+  return 0;
 }
