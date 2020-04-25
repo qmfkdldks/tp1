@@ -18,6 +18,6 @@ int main()
   scanf("%f", &length);
   printf("----------\n");
 
-  printf("En la pulgada es: %.4f \n", length / 2.54);
+  printf("En la pulgada es: %.4f \n", length * 0.39737);
   return 0;
 }
